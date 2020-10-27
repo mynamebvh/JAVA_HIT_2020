@@ -5,5 +5,6 @@ public class RunMain {
         SoPhuc p1 = new SoPhuc(1,2);
         SoPhuc p2 = new SoPhuc(2,3);
         p1.cong(p2).xuat();
+        p1.tru(p2).xuat();
     }
 }

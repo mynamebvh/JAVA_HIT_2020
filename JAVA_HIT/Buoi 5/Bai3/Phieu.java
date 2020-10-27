@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Phieu {
-    private String MaPhieu;
-    private String TenPhieu;
+    private String maPhieu;
+    private String tenPhieu;
     DateTime a = new DateTime();
     ArrayList <SanPham> x = new ArrayList<>();
     int n;
@@ -14,20 +14,14 @@ public class Phieu {
 
     }
 
-    public Phieu(String maPhieu, String tenPhieu, DateTime a, ArrayList<SanPham> x, int n) {
-        MaPhieu = maPhieu;
-        TenPhieu = tenPhieu;
-        this.a = a;
-        this.x = x;
-        this.n = n;
-    }
+
 
     public void InputPhieu(int n){
         Scanner sc = new Scanner(System.in);
         System.out.println("nhap MaPhieu: ");
-        this.MaPhieu = sc.nextLine();
+        this.maPhieu = sc.nextLine();
         System.out.println("nhap TenPhieu: ");
-        this.TenPhieu = sc.nextLine();
+        this.tenPhieu = sc.nextLine();
         a.InputDate();
 
 
@@ -41,8 +35,8 @@ public class Phieu {
     }
 
     public void OutputPhieu(int n){
-        System.out.println("MaPhieu: " + this.MaPhieu);
-        System.out.println("TenPhieu: " + this.TenPhieu);
+        System.out.println("MaPhieu: " + this.maPhieu);
+        System.out.println("TenPhieu: " + this.tenPhieu);
         a.OutputDate();
         for(int i = 0 ; i < n ; i++){
             System.out.println("MaSP: " + x.get(i).getMaSP());

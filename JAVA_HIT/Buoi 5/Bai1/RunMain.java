@@ -8,6 +8,7 @@ public class RunMain {
         Scanner sc = new Scanner(System.in);
         int n;
         n = sc.nextInt();
+
         ArrayList <DieuHoa> pro = new ArrayList<>();
 
         for(int i = 0 ; i < n; i++){
@@ -19,21 +20,32 @@ public class RunMain {
         for(DieuHoa i : pro){
             System.out.println(i.toString());
         }
-        int min = pro.get(0).getGiaBan();
 
-        for(int i = 1 ; i < n; i++){
-            if(min > pro.get(i).getGiaBan()){
+        int vtri = 0;
+        int min = 0;
+        for(int i = 0 ; i < n; i++){
+            if(pro.get(i).getTenHang().equals("Electrolux")){
                 min = pro.get(i).getGiaBan();
+                vtri = i;
+                break;
             }
         }
 
         System.out.println("====Loc===");
-        for(int i = 0 ; i < n; i++){
-            if(pro.get(i).getTenHang().equals("Electrolux") && min == pro.get(i).getGiaBan() ){
-                System.out.println(pro.get(i).toString());
+        if(vtri == 0){
+            System.out.println("Khong ton tai");
+        }
+        else {
+            for (int i = vtri; i < n; i++) {
+                if (pro.get(i).getTenHang().equals("Electrolux") && min > pro.get(i).getGiaBan()) {
+                    min = pro.get(i).getGiaBan();
+                }
             }
-            else{
-                System.out.println("Khong ton tai");
+        }
+
+        for (int i = vtri; i < n; i++) {
+            if (pro.get(i).getTenHang().equals("Electrolux") && min == pro.get(i).getGiaBan()) {
+                System.out.println(pro.get(i).toString());
             }
         }
 

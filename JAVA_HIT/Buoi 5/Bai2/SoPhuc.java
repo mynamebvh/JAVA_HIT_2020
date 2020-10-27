@@ -33,6 +33,12 @@ public class SoPhuc {
         return x;
     }
 
+    public SoPhuc tru(SoPhuc n){
+        SoPhuc x = new SoPhuc();
+        x.ao = this.ao - n.ao;
+        x.thuc = this.thuc - n.thuc;
+        return x;
+    }
     public int getThuc() {
         return thuc;
     }
